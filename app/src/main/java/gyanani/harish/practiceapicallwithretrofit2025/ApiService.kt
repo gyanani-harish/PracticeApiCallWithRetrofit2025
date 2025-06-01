@@ -5,7 +5,9 @@ import retrofit2.http.GET
 
 interface ApiService {
     @GET("posts")
-    fun getPosts(): Call<List<Post>> // Suspend for coroutines
+    fun getPosts(): Call<List<Post>>
+    @GET("posts")
+    suspend fun getPostsWithSuspend(): List<Post> // Suspend for coroutines
 }
 
 data class Post(
